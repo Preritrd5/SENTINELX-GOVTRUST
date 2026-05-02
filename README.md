@@ -37,7 +37,7 @@ Ollama / OpenAI
 
 🏗 System Architecture
 
-![System Architecture](assets/Architecture.png)
+![System Architecture](assets/Architecture.jpeg)
 
 
 Government / Admin / Citizen
