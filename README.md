@@ -1,41 +1,60 @@
-🚀 SentinelX SecureChain GovTrust
-Autonomous AI Cyber Defense & Secure Government Fund Distribution Platform
+# 🚀 SentinelX SecureChain GovTrust  
 
-AI Fraud Detection + RAG Python Backend Frontend Next.js + Tailwind Security Fuzz Testing + Self-Healing Blockchain Ethereum Open Source Hackathon
+<p align="center">
+<img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&size=28&duration=3000&color=00F7FF&center=true&vCenter=true&width=900&lines=AI+Cyber+Defense+Platform;Secure+Government+Fund+Distribution;Fraud+Detection+%2B+Self+Healing+Security;Blockchain+Based+Transparency;Hackathon+Winning+Project+🚀" />
+</p>
 
-🌍 Overview
+---
 
-SentinelX SecureChain GovTrust is an intelligent digital governance and cybersecurity platform that ensures secure and transparent distribution of government welfare funds such as:
+<p align="center">
+<img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/AI-Powered-blue?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Backend-FastAPI-green?style=for-the-badge&logo=fastapi"/>
+<img src="https://img.shields.io/badge/Frontend-Next.js-black?style=for-the-badge&logo=next.js"/>
+<img src="https://img.shields.io/badge/Blockchain-Ethereum-purple?style=for-the-badge&logo=ethereum"/>
+<img src="https://img.shields.io/badge/Security-Autonomous-red?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge"/>
+</p>
 
-🎓 Student scholarships
-🌾 Farmer subsidies
-🏗 Public infrastructure funds
-👩‍👩‍👧 Welfare schemes
+---
 
-The system uses Artificial Intelligence, Cybersecurity, and Blockchain to:
+## 🌍 Overview
 
-✔ Verify genuine beneficiaries
-✔ Detect fraudulent transactions and duplicate claims
-✔ Identify phishing links and scam activities
-✔ Continuously test system vulnerabilities using attack simulation
-✔ Automatically defend and secure the system
-✔ Maintain transparent and tamper-proof records
+**SentinelX SecureChain GovTrust** is an advanced AI-powered cybersecurity and governance platform that ensures:
 
-The project demonstrates how AI can build a secure and trustworthy digital governance ecosystem.
+- 🔐 Secure fund distribution  
+- 🤖 Real-time fraud detection  
+- 🔍 Scam & phishing detection  
+- 🛡 Autonomous cyber defense  
+- 🔗 Blockchain transparency  
 
-🧠 Core AI Technologies
-Technology	Purpose
-Machine Learning	Fraud detection & risk scoring
-NLP	Understand user and transaction patterns
-RAG	Threat intelligence & explanation system
-Anomaly Detection	Identify suspicious behavior
-Local LLM	Generate explanations and insights
+---
 
-The AI system is powered using:
+## 🎬 Demo Preview
 
-Ollama / OpenAI
+### 🖥 Dashboard
+![Dashboard](https://media.giphy.com/media/3o7TKMt1VVNkHV2PaE/giphy.gif)
 
-🏗 System Architecture
+### 🔍 Fraud Detection
+![Fraud](https://media.giphy.com/media/xT0xeJpnrWC4XWblEk/giphy.gif)
+
+### 🛡 Cyber Defense
+![Cyber](https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif)
+
+---
+
+## 🧠 Core Features
+
+- ✅ AI Fraud Detection Engine  
+- ✅ Link Scam Detection System  
+- ✅ RAG-based Threat Intelligence  
+- ✅ Self-Healing Security  
+- ✅ Blockchain Logging  
+- ✅ Explainable AI  
+
+---
+
+## 🏗 System Architecture
 
 ![Architecture](assets/Architecture.jpeg)
 
@@ -329,6 +348,10 @@ Secure digital infrastructure
 Build trust in governance systems
 👨‍💻 Author
 
+<<<<<<< HEAD
 Your Team Name : 
 
 Vikrant
+=======
+Your Team Name
+>>>>>>> 02dcaf783388f844ea36c0f088caeca9cf30ad09
