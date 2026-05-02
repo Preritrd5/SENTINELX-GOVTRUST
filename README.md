@@ -37,7 +37,7 @@ Ollama / OpenAI
 
 🏗 System Architecture
 
-![System Architecture](assets/Architecture.jpeg)
+![Architecture](assets/Architecture.jpeg)
 
 
 Government / Admin / Citizen
@@ -329,4 +329,6 @@ Secure digital infrastructure
 Build trust in governance systems
 👨‍💻 Author
 
-Your Team Name
+Your Team Name : 
+
+Vikrant
