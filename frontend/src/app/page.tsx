@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import {
   Shield, ArrowRight, User, Building2, Landmark,
@@ -13,10 +13,10 @@ export default function LandingPage() {
   const [role, setRole] = useState<'CITIZEN' | 'ADMIN' | 'GOVERNMENT'>('CITIZEN');
   const [mounted, setMounted] = useState(false);
 
-  // Fix for hydration errors caused by browser extensions
-  useState(() => {
-    if (typeof window !== 'undefined') setMounted(true);
-  });
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const [isLoading, setIsLoading] = useState(false);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -24,6 +24,9 @@ export default function LandingPage() {
   const [fullName, setFullName] = useState('');
   const [organization, setOrganization] = useState('');
   const [error, setError] = useState('');
+
+  if (!mounted) return null;
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -221,10 +224,13 @@ export default function LandingPage() {
               </button>
             </form>
 
-            <button onClick={() => setMode(mode === 'LOGIN' ? 'SIGNUP' : 'LOGIN')}
+            <button 
+              onClick={() => setMode(mode === 'LOGIN' ? 'SIGNUP' : 'LOGIN')}
+              suppressHydrationWarning
               className="w-full text-slate-500 text-xs font-bold hover:text-sky-400 transition-colors py-1 text-center">
               {mode === 'LOGIN' ? "Don't have an account? Sign up" : 'Already have an account? Sign in'}
             </button>
+
           </div>
         </div>
       </section>
