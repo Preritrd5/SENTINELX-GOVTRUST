@@ -1,22 +1,46 @@
 # dependencies
 node_modules/
 **/node_modules/
-
-# env files
+venv/
+.venv/
+env/
 .env
 .env.local
 .env.*.local
 
-# build output
-.next/
-dist/
+# python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
 build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+sentinelx.db
+
+# next.js
+.next/
 out/
 
 # logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+*.log
 
 # OS junk
 .DS_Store

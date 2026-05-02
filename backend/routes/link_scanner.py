@@ -1,14 +1,13 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
 import re
+import os
+import google.generativeai as genai
 
 router = APIRouter()
 
 class LinkRequest(BaseModel):
     url: str
-
-from langchain_google_genai import ChatGoogleGenerativeAI
-import os
 
 @router.post("/scan-link")
 def scan_link(req: LinkRequest):
@@ -30,10 +29,11 @@ def scan_link(req: LinkRequest):
         # Trigger AI Vector for Deep Analysis
         if api_key:
             try:
-                llm = ChatGoogleGenerativeAI(model="gemini-pro", google_api_key=api_key)
+                genai.configure(api_key=api_key)
+                model = genai.GenerativeModel("gemini-pro")
                 prompt = f"Analyze this URL for potential phishing or fraud: {url}. Explain the psychological tactics or technical risks involved in 2 sentences."
-                response = llm.invoke(prompt)
-                ai_analysis = response.content
+                response = model.generate_content(prompt)
+                ai_analysis = response.text
             except:
                 ai_analysis = "AI Analysis unavailable. URL exhibits classic phishing patterns."
 
@@ -47,3 +47,4 @@ def scan_link(req: LinkRequest):
             "domain_trust": 10 if "gov" in url else 4
         }
     }
+
