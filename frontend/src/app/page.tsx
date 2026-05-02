@@ -11,6 +11,12 @@ export default function LandingPage() {
   const router = useRouter();
   const [mode, setMode] = useState<'LOGIN' | 'SIGNUP'>('LOGIN');
   const [role, setRole] = useState<'CITIZEN' | 'ADMIN' | 'GOVERNMENT'>('CITIZEN');
+  const [mounted, setMounted] = useState(false);
+
+  // Fix for hydration errors caused by browser extensions
+  useState(() => {
+    if (typeof window !== 'undefined') setMounted(true);
+  });
   const [isLoading, setIsLoading] = useState(false);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -137,7 +143,10 @@ export default function LandingPage() {
 
             <div className="flex bg-[#0f2244] p-1.5 rounded-xl gap-1.5 border border-[#2a4a6e]">
               {(['LOGIN', 'SIGNUP'] as const).map((m) => (
-                <button key={m} onClick={() => { setMode(m); setError(''); }}
+                <button 
+                  key={m} 
+                  onClick={() => { setMode(m); setError(''); }}
+                  suppressHydrationWarning
                   className={`flex-1 py-3.5 rounded-lg transition-all text-xs font-black uppercase tracking-[0.15em] ${
                     mode === m ? 'bg-sky-600 text-white shadow-[0_0_20px_rgba(14,165,233,0.3)]' : 'text-slate-500 hover:text-sky-400'
                   }`}>
@@ -163,7 +172,10 @@ export default function LandingPage() {
                 { id: 'ADMIN', icon: <Building2 size={14} />, label: 'Admin' },
                 { id: 'GOVERNMENT', icon: <Landmark size={14} />, label: 'Gov' }
               ].map((t) => (
-                <button key={t.id} onClick={() => setRole(t.id as any)}
+                <button 
+                  key={t.id} 
+                  onClick={() => setRole(t.id as any)}
+                  suppressHydrationWarning
                   className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg transition-all text-xs font-bold ${
                     role === t.id ? 'bg-sky-950/60 text-sky-400 border border-sky-500/30' : 'text-slate-600 hover:text-slate-400'
                   }`}>
@@ -178,11 +190,13 @@ export default function LandingPage() {
                   <div className="space-y-1.5">
                     <label className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Full Name</label>
                     <input type="text" required placeholder="Jane Doe" value={fullName} onChange={(e) => setFullName(e.target.value)}
+                      suppressHydrationWarning
                       className="w-full bg-[#0f2244] border border-[#2a4a6e] rounded-xl px-4 py-3 text-sm outline-none focus:border-sky-400 text-white placeholder:text-slate-500 transition-all" />
                   </div>
                   <div className="space-y-1.5">
                     <label className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Email</label>
                     <input type="email" required placeholder="name@gov.trust" value={email} onChange={(e) => setEmail(e.target.value)}
+                      suppressHydrationWarning
                       className="w-full bg-[#0f2244] border border-[#2a4a6e] rounded-xl px-4 py-3 text-sm outline-none focus:border-sky-400 text-white placeholder:text-slate-500 transition-all" />
                   </div>
                 </>
@@ -190,14 +204,17 @@ export default function LandingPage() {
               <div className="space-y-1.5">
                 <label className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Username</label>
                 <input type="text" required placeholder="username" value={username} onChange={(e) => setUsername(e.target.value)}
+                  suppressHydrationWarning
                   className="w-full bg-black/40 border border-white/5 rounded-xl px-4 py-3 text-sm outline-none focus:border-sky-500/50 text-white placeholder:text-slate-700 transition-all" />
               </div>
               <div className="space-y-1.5">
                 <label className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Password</label>
                 <input type="password" required placeholder="••••••••" value={password} onChange={(e) => setPassword(e.target.value)}
+                  suppressHydrationWarning
                   className="w-full bg-black/40 border border-white/5 rounded-xl px-4 py-3 text-sm outline-none focus:border-sky-500/50 text-white placeholder:text-slate-700 transition-all" />
               </div>
               <button type="submit" disabled={isLoading}
+                suppressHydrationWarning
                 className="w-full btn-primary !py-3 flex items-center justify-center gap-2 mt-2">
                 <span className="tracking-widest">{isLoading ? 'Authenticating...' : mode === 'LOGIN' ? 'Sign In' : 'Create Account'}</span>
                 {!isLoading && <ArrowRight size={14} />}
