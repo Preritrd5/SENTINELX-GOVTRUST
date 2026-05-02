@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+    --primary: 199 89% 48%;
+    --ring: 224 76% 48%;
+    --radius: 1rem;
+  }
+
+  html {
+    font-size: 16px;
+  }
+
+  body {
+    @apply antialiased text-white selection:bg-sky-500/30;
+    background: transparent;
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-[#1a2f4e] border border-[#2a4a6e] rounded-2xl shadow-xl relative overflow-hidden transition-all duration-300;
+  }
+
+  .glass-card:hover {
+    @apply border-sky-500/50;
+  }
+
+  .btn-primary {
+    @apply bg-sky-600 hover:bg-sky-500 text-white px-7 py-3 rounded-xl font-bold uppercase tracking-wider transition-all shadow-lg active:scale-95 text-sm;
+  }
+
+  .btn-gold {
+    @apply bg-yellow-500 hover:bg-yellow-400 text-[#0d1b2e] px-7 py-3 rounded-xl font-bold uppercase tracking-wider transition-all shadow-lg active:scale-95 text-sm;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-blue-400 font-bold;
+  }
+
+  .status-badge {
+    @apply px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border;
+  }
+
+  .sky-glow {
+    @apply absolute pointer-events-none rounded-full blur-[100px] opacity-10 bg-sky-500;
+  }
+
+  .gold-glow {
+    @apply absolute pointer-events-none rounded-full blur-[100px] opacity-5 bg-yellow-500;
+  }
+
+  .cyber-grid {
+    background-image:
+      linear-gradient(rgba(56, 189, 248, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+}
+
+.animate-prestige-float {
+  animation: prestige-float 8s ease-in-out infinite;
+}
+
+@keyframes prestige-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+.animate-shake {
+  animation: shake 0.2s ease-in-out 0s 2;
+}
